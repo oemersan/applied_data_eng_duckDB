@@ -1,0 +1,20 @@
+=== Pandas baseline ===
+Files: 3
+  - data/yellow_2024-01.parquet  (47.6 MB)
+  - data/yellow_2024-02.parquet  (48.0 MB)
+  - data/yellow_2024-03.parquet  (57.3 MB)
+
+  1. Load 3 parquet files into DataFrame     0.875 s
+     -> 9,554,778 rows, 1639.8 MB in RAM
+  2. GROUP BY PULocationID (top-10 fares)    0.161 s
+  3. Trips by pickup hour                    0.193 s
+  4. Tip rate by payment type (fare > $10)   1.007 s
+
+  TOTAL                                      2.236 s
+
+Sample result (top-3 pickup zones by revenue):
+               trips   avg_fare  total_revenue
+PULocationID                                  
+132           429746  59.667841    33137538.11
+138           284362  41.830630    18671642.81
+161           453826  15.547671    10814398.53
