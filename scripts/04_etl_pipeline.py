@@ -1,11 +1,7 @@
 """
 End-to-end ETL pipeline: Parquet -> DuckDB (transform) -> PostgreSQL (load).
 
-This is the script that ties DuckDB into the course material. The course
-covers PostgreSQL as the destination, NiFi/Airflow as orchestrators, and
-Python ETL libraries for transformation. DuckDB plugs in as the transform
-engine — fast, SQL-native, and zero-config.
-
+This is the script that ties DuckDB into the our materials we use in class.
 Pipeline:
   1. EXTRACT: read raw Parquet files from data/
   2. TRANSFORM: clean + aggregate using DuckDB SQL
