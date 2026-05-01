@@ -1,0 +1,19 @@
+=== PostgreSQL ===
+  1. CREATE TABLE schema                          0.008 s
+  2. Load Parquet into Postgres (via DuckDB)      6.147 s
+  3. Run aggregate query                          0.237 s
+  POSTGRES TOTAL (load + query)                   6.383 s
+
+=== DuckDB ===
+  1. Query Parquet file directly                  0.018 s
+
+=======================================================
+  Postgres (load + query):   6.383 s
+  DuckDB (direct query):     0.018 s
+  Speedup:                   363.7x
+=======================================================
+
+Note: this is NOT a fair fight. Postgres is paying the cost
+of being a persistent transactional store. DuckDB skips that
+entire stage because it just reads the Parquet file in place.
+That's exactly the point — pick the right tool for the job.

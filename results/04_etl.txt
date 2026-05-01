@@ -1,0 +1,14 @@
+=== ETL pipeline: Parquet -> DuckDB -> Postgres ===
+
+  TRANSFORM: 20,351 aggregated rows  (0.13 s)
+  LOAD:      wrote into Postgres        (0.03 s)
+
+Top 5 (date, zone) by revenue, read back from Postgres:
+  date          zone   trips   avg_fare      revenue
+  2024-01-02     132    6336      63.89    523119.50
+  2024-03-24     132    6139      65.34    515437.42
+  2024-03-10     132    5941      64.34    490404.80
+  2024-03-17     132    5719      65.21    482225.41
+  2024-03-11     132    5735      64.26    479213.09
+
+Total ETL time: 0.16 s

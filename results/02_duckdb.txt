@@ -1,0 +1,18 @@
+=== DuckDB demo ===
+DuckDB version: 1.5.2
+Files: 3 (queried in place — no load step)
+  - data/yellow_2024-01.parquet  (47.6 MB)
+  - data/yellow_2024-02.parquet  (48.0 MB)
+  - data/yellow_2024-03.parquet  (57.3 MB)
+
+  1. Count rows across all 3 files           0.002 s
+     -> 9,554,778 rows
+  2. GROUP BY PULocationID (top-10 fares)    0.282 s
+  3. Trips by pickup hour                    0.038 s
+  4. Tip rate by payment type (fare > $10)   0.030 s
+
+Sample result (top-3 pickup zones by revenue):
+ PULocationID  trips  avg_fare  total_revenue
+          132 429746 59.667841   3.313754e+07
+          138 284362 41.830630   1.867164e+07
+          161 453826 15.547671   1.081440e+07
