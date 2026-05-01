@@ -13,7 +13,7 @@ Engineering individual tool presentation (Spring 2026).
 > like Pandas, but column-oriented and vectorized so it stays fast on
 > multi-GB datasets that make Pandas struggle.
 
-📺 **Video presentation:** [link will be added after upload — see `video_link.txt`](./video_link.txt)
+📺 **Video presentation:** [video_link.txt`](./video_link.txt)
 
 ---
 
@@ -300,5 +300,4 @@ duckdb-yzv322e/
 
 ## 9. AI usage disclosure
 
-See [`AI_USAGE.md`](AI_USAGE.md) for the full disclosure with
-task-by-task breakdown.
+See [`AI_USAGE.md`](AI_USAGE.md) for the full disclosure.
