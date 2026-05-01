@@ -80,7 +80,7 @@ ORDER BY payment_type;
 
 ---
 
-## CELL 6 — Same query, but show Pandas RAM use first
+## CELL 6 — Same query, but we show Pandas RAM use first
 
 
 ```bash
