@@ -21,8 +21,8 @@ Engineering individual tool presentation (Spring 2026).
 
 DuckDB is an in-process columnar SQL database released in 2019 by Mark
 Raasveldt and Hannes Mühleisen at CWI (Amsterdam). Often called "SQLite
-for analytics", it runs inside your Python process — or its own browser
-notebook UI — with zero server setup and queries Parquet, CSV, and JSON
+for analytics", it runs inside your Python process , or its own browser
+notebook UI , with zero server setup and queries Parquet, CSV, and JSON
 files directly. License: MIT. Current version: 1.5.2 (April 2026).
 
 ## 2. Prerequisites
