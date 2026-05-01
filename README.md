@@ -7,8 +7,8 @@ small to justify spinning up Spark or a data warehouse.
 This repository is the working demo for the YZV 322E Applied Data
 Engineering individual tool presentation (Spring 2026).
 
-> **Course context.** YZV 322E covers PostgreSQL/pgAdmin as the relational
-> store and Python ETL libraries (Pandas) for in-memory transformations.
+> We cover PostgreSQL/pgAdmin as the relational
+> store and Python ETL libraries (Pandas) for in-memory transformations in the class.
 > DuckDB sits exactly between them: SQL-native like Postgres, in-process
 > like Pandas, but column-oriented and vectorized so it stays fast on
 > multi-GB datasets that make Pandas struggle.
@@ -83,6 +83,26 @@ docker compose up -d
 docker compose ps      # wait until postgres shows (healthy)
 ```
 
+### Register the Postgres server in pgAdmin
+
+Open pgAdmin in your browser at [`http://localhost:5050`](http://localhost:5050)
+and log in with `admin@example.com` / `admin`. The Postgres container is
+already running, but pgAdmin needs to be told how to connect to it once.
+
+1. In the left panel, right-click **Servers → Register → Server...**
+2. **General** tab — Name: `DuckDB Demo Postgres` (any label is fine)
+3. **Connection** tab — fill in:
+   - Host name/address: `postgres` (the container name; pgAdmin reaches it
+     over the internal Docker network)
+   - Port: `5432` (the *container-internal* port — not the host port from `.env`)
+   - Maintenance database: `taxi`
+   - Username: `demo`
+   - Password: `demo` (tick **Save password**)
+4. Click **Save**. Expand the new server in the left panel — you should
+   see the `taxi` database. Tables will appear under
+   `Databases → taxi → Schemas → public → Tables` after you run Cell 7
+   of the UI demo.
+
 Download three months of NYC Yellow Taxi data (~150 MB, ~9.5 M rows):
 
 ```bash
@@ -114,7 +134,8 @@ into the DuckDB UI notebook in order. The cells cover:
 8. Read back from Postgres
 
 For the Postgres side, open pgAdmin in a second browser tab at
-[`http://localhost:5050`](http://localhost:5050) (login: `admin@example.com` / `admin`).
+[`http://localhost:5050`](http://localhost:5050). The server should
+already be registered from step 3.
 
 ### 4b. The reproducible benchmark scripts
 
@@ -301,3 +322,6 @@ duckdb-yzv322e/
 ## 9. AI usage disclosure
 
 See [`AI_USAGE.md`](AI_USAGE.md) for the full disclosure.
+
+
+## Ömer Faruk San - 150220307
