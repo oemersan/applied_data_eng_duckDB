@@ -1,8 +1,5 @@
 # DuckDB UI Demo — SQL Cells
 
-Copy each block below into a separate cell in DuckDB UI.
-
-
 - Cell 1: setup (one-time)
 - Cell 2: count rows (the "2 ms wow")
 - Cell 3: real analytical query (top zones)
@@ -94,8 +91,8 @@ python scripts/01_pandas_baseline.py
 
 ## CELL 7 — Live ETL: DuckDB → PostgreSQL
 
-This is the headline cell. It connects DuckDB to Postgres and writes
-aggregated results into a real table — live, in front of the audience.
+It connects DuckDB to Postgres and writes
+aggregated results into a real table.
 
 ```sql
 -- Install + load the postgres extension (one-time per session)
@@ -125,9 +122,7 @@ SELECT COUNT(*) AS rows_in_postgres FROM pg.daily_zone_metrics;
 
 ---
 
-## CELL 8 — Read it back to close the loop
-
-After showing pgAdmin, return to DuckDB UI and run:
+## CELL 8 — 
 
 ```sql
 -- Read top zones from the Postgres table we just wrote
@@ -143,7 +138,7 @@ LIMIT 5;
 
 ---
 
-## Cleanup (after recording, optional)
+## Cleanup
 
 ```sql
 -- Drop the table we created in Postgres
